@@ -1,0 +1,260 @@
+{
+  "confirm_win_s": [
+    0.0,
+    0.8
+  ],
+  "n_valid_all": true,
+  "subjects": [
+    "RN102",
+    "RN103",
+    "RN105",
+    "D001d",
+    "D011d"
+  ],
+  "increments": {
+    "M1\u2212M0 pitch": {
+      "arm": "M1",
+      "family": "pitch",
+      "per_subject": [
+        {
+          "subject": "RN102",
+          "confirm_mean_trace": 0.00013077865465499833,
+          "pre_mean_trace": 0.00016405238973915263
+        },
+        {
+          "subject": "RN103",
+          "confirm_mean_trace": 0.0001885845949232684,
+          "pre_mean_trace": -0.0005328920662664399
+        },
+        {
+          "subject": "RN105",
+          "confirm_mean_trace": 0.0004840392823488857,
+          "pre_mean_trace": 0.0018631596445215363
+        },
+        {
+          "subject": "D001d",
+          "confirm_mean_trace": 0.00046961506136367445,
+          "pre_mean_trace": -0.0001322612424993418
+        },
+        {
+          "subject": "D011d",
+          "confirm_mean_trace": 2.644223246677171e-05,
+          "pre_mean_trace": 0.000195862681824769
+        }
+      ],
+      "confirm_mean": 0.00025989196515151974,
+      "confirm_sd": 0.00018465078531022263,
+      "pre_mean": 0.0003115842814639352
+    },
+    "M2\u2212M1 evidence": {
+      "arm": "M2",
+      "family": "evidence",
+      "per_subject": [
+        {
+          "subject": "RN102",
+          "confirm_mean_trace": 0.0008511446244687453,
+          "pre_mean_trace": 0.0006798760863577341
+        },
+        {
+          "subject": "RN103",
+          "confirm_mean_trace": -5.42441021358143e-06,
+          "pre_mean_trace": 2.4149287577358e-06
+        },
+        {
+          "subject": "RN105",
+          "confirm_mean_trace": -0.00036469689857646234,
+          "pre_mean_trace": -0.0006581250019123374
+        },
+        {
+          "subject": "D001d",
+          "confirm_mean_trace": -0.0004243424466924545,
+          "pre_mean_trace": 0.00012223723238998326
+        },
+        {
+          "subject": "D011d",
+          "confirm_mean_trace": -5.768109530286735e-05,
+          "pre_mean_trace": -1.9233077856464003e-05
+        }
+      ],
+      "confirm_mean": -2.0004526332405007e-07,
+      "confirm_sd": 0.0004562617329010263,
+      "pre_mean": 2.5434033547330333e-05
+    },
+    "M3\u2212M2 resid": {
+      "arm": "M3",
+      "family": "resid",
+      "per_subject": [
+        {
+          "subject": "RN102",
+          "confirm_mean_trace": -8.36952791740281e-05,
+          "pre_mean_trace": -4.227398006708484e-05
+        },
+        {
+          "subject": "RN103",
+          "confirm_mean_trace": -8.767461552108401e-05,
+          "pre_mean_trace": 3.246495775328827e-05
+        },
+        {
+          "subject": "RN105",
+          "confirm_mean_trace": -0.00018892925737696664,
+          "pre_mean_trace": 0.00035714624400571784
+        },
+        {
+          "subject": "D001d",
+          "confirm_mean_trace": 8.313366425635059e-05,
+          "pre_mean_trace": 0.000216815138732237
+        },
+        {
+          "subject": "D011d",
+          "confirm_mean_trace": 6.343239433938983e-07,
+          "pre_mean_trace": -2.7380707498684e-05
+        }
+      ],
+      "confirm_mean": -5.530623277446685e-05,
+      "confirm_sd": 9.16555659377386e-05,
+      "pre_mean": 0.00010735433058509485
+    }
+  },
+  "qc": [
+    {
+      "arm": "M0",
+      "subject": "RN102",
+      "n_valid": 20,
+      "max_kappa": 10.322773940665423,
+      "n_usable": 4360
+    },
+    {
+      "arm": "M0",
+      "subject": "RN103",
+      "n_valid": 20,
+      "max_kappa": 10.378070385288023,
+      "n_usable": 4683
+    },
+    {
+      "arm": "M0",
+      "subject": "RN105",
+      "n_valid": 20,
+      "max_kappa": 10.385335612970781,
+      "n_usable": 4439
+    },
+    {
+      "arm": "M0",
+      "subject": "D001d",
+      "n_valid": 20,
+      "max_kappa": 10.207044512932532,
+      "n_usable": 4543
+    },
+    {
+      "arm": "M0",
+      "subject": "D011d",
+      "n_valid": 20,
+      "max_kappa": 10.227401782849668,
+      "n_usable": 3937
+    },
+    {
+      "arm": "M1",
+      "subject": "RN102",
+      "n_valid": 20,
+      "max_kappa": 11.510458874233393,
+      "n_usable": 4360
+    },
+    {
+      "arm": "M1",
+      "subject": "RN103",
+      "n_valid": 20,
+      "max_kappa": 11.607631644156422,
+      "n_usable": 4683
+    },
+    {
+      "arm": "M1",
+      "subject": "RN105",
+      "n_valid": 20,
+      "max_kappa": 11.510751119584818,
+      "n_usable": 4439
+    },
+    {
+      "arm": "M1",
+      "subject": "D001d",
+      "n_valid": 20,
+      "max_kappa": 11.384884957564406,
+      "n_usable": 4543
+    },
+    {
+      "arm": "M1",
+      "subject": "D011d",
+      "n_valid": 20,
+      "max_kappa": 11.444876316256968,
+      "n_usable": 3937
+    },
+    {
+      "arm": "M2",
+      "subject": "RN102",
+      "n_valid": 20,
+      "max_kappa": 12.024918223036256,
+      "n_usable": 4360
+    },
+    {
+      "arm": "M2",
+      "subject": "RN103",
+      "n_valid": 20,
+      "max_kappa": 12.11500070875784,
+      "n_usable": 4683
+    },
+    {
+      "arm": "M2",
+      "subject": "RN105",
+      "n_valid": 20,
+      "max_kappa": 12.092812062001794,
+      "n_usable": 4439
+    },
+    {
+      "arm": "M2",
+      "subject": "D001d",
+      "n_valid": 20,
+      "max_kappa": 11.912526342622234,
+      "n_usable": 4543
+    },
+    {
+      "arm": "M2",
+      "subject": "D011d",
+      "n_valid": 20,
+      "max_kappa": 11.97750528503585,
+      "n_usable": 3937
+    },
+    {
+      "arm": "M3",
+      "subject": "RN102",
+      "n_valid": 20,
+      "max_kappa": 12.036194977923525,
+      "n_usable": 4360
+    },
+    {
+      "arm": "M3",
+      "subject": "RN103",
+      "n_valid": 20,
+      "max_kappa": 12.132508264501231,
+      "n_usable": 4683
+    },
+    {
+      "arm": "M3",
+      "subject": "RN105",
+      "n_valid": 20,
+      "max_kappa": 12.099480940237282,
+      "n_usable": 4439
+    },
+    {
+      "arm": "M3",
+      "subject": "D001d",
+      "n_valid": 20,
+      "max_kappa": 11.926366443610453,
+      "n_usable": 4543
+    },
+    {
+      "arm": "M3",
+      "subject": "D011d",
+      "n_valid": 20,
+      "max_kappa": 12.006482503259562,
+      "n_usable": 3937
+    }
+  ]
+}

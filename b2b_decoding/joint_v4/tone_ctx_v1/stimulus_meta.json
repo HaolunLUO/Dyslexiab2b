@@ -1,0 +1,67 @@
+{
+  "winner_n_coef": 3,
+  "gates": {
+    "log_loss_beats_prior": true,
+    "perm_p_lt_0.05": true,
+    "all_folds_have_all_classes": true,
+    "model_A_beats_prototype": true,
+    "not_driven_by_one_base_syllable": true
+  },
+  "launch": true,
+  "model_a": {
+    "n": 3219,
+    "n_coef": 3,
+    "mse": 0.013801177272684546,
+    "mse_prototype": 0.01774057823222574,
+    "beats_prototype": true,
+    "_b_ll": 1.147600870488328
+  },
+  "model_b": {
+    "n": 3219,
+    "n_coef": 3,
+    "log_loss": 1.147600870488328,
+    "log_loss_prior": 1.3293694413842283,
+    "beats_prior": true,
+    "p_perm": 0.004975124378109453,
+    "brier": 0.15123018276236036,
+    "confusion": [
+      [
+        67,
+        150,
+        12,
+        394
+      ],
+      [
+        37,
+        517,
+        58,
+        252
+      ],
+      [
+        2,
+        77,
+        215,
+        212
+      ],
+      [
+        43,
+        154,
+        71,
+        958
+      ]
+    ],
+    "overall_acc": 0.5458216837527182,
+    "fold_has_all_classes": true,
+    "n_splits": 5,
+    "top_base_syllable": "yi",
+    "log_loss_without_top_base": 1.139376085524688,
+    "not_driven_by_one_item": true,
+    "log_loss_story_blocked": 1.133271469227171,
+    "prior": [
+      0.19353836595215906,
+      0.2684063373718546,
+      0.15719167443305374,
+      0.3808636222429326
+    ]
+  }
+}

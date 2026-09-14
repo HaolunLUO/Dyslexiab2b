@@ -1,0 +1,41 @@
+{
+  "tag": "tonev3-observed",
+  "date": "2026-09-02",
+  "claim": "Frozen combined tone_v3 observed B2B. No feature edits after this tag.",
+  "design": "envelope_v2:pitch:tone_v3:offset:lexical_frequency:gpt2cn_surprisal",
+  "family_names": ["envelope", "pitch", "tone", "offset", "frequency", "surprisal"],
+  "passthrough": true,
+  "pca_k": 1,
+  "h_ridge_kappa": 0,
+  "drift_knots": 0,
+  "confirm_win_s": [0.0, 0.8],
+  "n_primary": 63,
+  "observed_outdirs": {
+    "onset": "/orcd/pool/005/haolun52/encoding_results_b2b_mne_ica_v1_envpitch_tonev3_onset_tmin03_passthrough",
+    "offset": "/orcd/pool/005/haolun52/encoding_results_b2b_mne_ica_v1_envpitch_tonev3_woffset_tmin05_passthrough"
+  },
+  "frames": {
+    "onset": {"anchor": "onset", "tmin_s": -0.3, "tmax_s": 1.0, "primary": true},
+    "offset": {"anchor": "offset", "tmin_s": -0.5, "tmax_s": 1.0, "primary": false}
+  },
+  "feature_sha256": {
+    "section_001": {
+      "X_word_envelope_v2.npy": "be315d5ee2ab7efd69c64fb870a31d1ed363dd3e9257176c665d84d388ec7267",
+      "X_word_pitch.npy": "9eecb2c7ea8059ff7febc61540d1316a5749f7bb5cc4a10dd24e3aa1860c77db",
+      "X_word_tone_v3.npy": "661a90d12014e23a9a53583de4468de68a03b140f370fdfecc90305e7fe9ae53",
+      "X_word_offset.npy": "bf0279a392aa16425fae2e8f2d24bbd279e6f6b2bc211b8222ad941f6538da84",
+      "X_word_lexical_frequency.npy": "14034452f8bb469560697211bb232777ae467dab8b4aa0bad4c3d297e369e8f9",
+      "X_word_gpt2cn_surprisal.npy": "1e9025f856bdee6346b9be2a0cdb7b485823da8655fb06a8c93915fc9b357604"
+    },
+    "section_002": {
+      "X_word_envelope_v2.npy": "7ae95bb1396aac6a3e03a0713933126f7452fcb327193b0aaeeef7d7d29ac0de",
+      "X_word_pitch.npy": "8c7ab119e7724fd06dd5ce80fa41262429ded8db25b26663758cddcefc77c088",
+      "X_word_tone_v3.npy": "ac0fc0c24c14ebe55519dea6c40bbe0495593e447b2dc50c1c65924bf357ee1e",
+      "X_word_offset.npy": "f72722d068a04c50fcac203a056d925f4311f44dc3c11cccbb80077d301c0928",
+      "X_word_lexical_frequency.npy": "21405a4dfe29d31756f4554c4452d290f057c70711d9a8eca794788dd314db35",
+      "X_word_gpt2cn_surprisal.npy": "c716c93f43fa2b5b6035975715e172670e3f26ba0f7f76b91c036eefbbd8d018"
+    }
+  },
+  "eeg_overlay": "/orcd/pool/005/haolun52/extracted_sections_wordlocked_mne_ica_v1_envpitch_b2b",
+  "note": "Standard pipeline nulls (min-shift 80, lambda retuned) are not Gate 1."
+}

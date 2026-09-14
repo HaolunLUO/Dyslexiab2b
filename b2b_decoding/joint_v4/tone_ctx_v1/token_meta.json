@@ -1,0 +1,18 @@
+{
+  "n_rows": 4962,
+  "n_per_section": {
+    "1": 2372,
+    "2": 2590
+  },
+  "n_T5": 56,
+  "n_T1T4": 4517,
+  "n_f0_valid": 3320,
+  "n_sandhi": 372,
+  "sandhi_counts": {
+    "t3t3_to_t2": 248,
+    "yi_to_4": 64,
+    "yi_to_2": 32,
+    "bu_t4_to_t2": 28
+  },
+  "n_multi_syllable_words": 1286
+}

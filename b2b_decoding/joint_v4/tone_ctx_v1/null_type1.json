@@ -1,0 +1,42 @@
+{
+  "n_rep": 30,
+  "n_null": 40,
+  "min_k": 20,
+  "sec_lengths": [
+    410,
+    490
+  ],
+  "signal": "controls+pitch only",
+  "fpr_counts": {
+    "whole_design": {
+      "evidence": 28,
+      "resid": 0
+    },
+    "family_only": {
+      "evidence": 30,
+      "resid": 2
+    },
+    "freedman_lane": {
+      "evidence": 0,
+      "resid": 0
+    }
+  },
+  "fpr_rate": {
+    "whole_design": {
+      "evidence": 0.9333333333333333,
+      "resid": 0.0
+    },
+    "family_only": {
+      "evidence": 1.0,
+      "resid": 0.06666666666666667
+    },
+    "freedman_lane": {
+      "evidence": 0.0,
+      "resid": 0.0
+    }
+  },
+  "whole_design_calibrated": false,
+  "freedman_lane_calibrated": true,
+  "decision": "use_freedman_lane",
+  "note": "Family-only shift of evidence/resid is recorded as a negative control for the anti-pattern (rotating the added family only)."
+}

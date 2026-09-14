@@ -1,0 +1,176 @@
+{
+  "tag": "tonectx-v1-adjudication",
+  "date": "2026-09-03",
+  "stage": "adjudication",
+  "claim": "Frozen after n=63 observed identification. Existence and split-half only. No TD/DD or brain-behavior until Holm existence and SB>=0.30 on that increment.",
+  "git_commit": "1d6e4682e4e6b5570a644f0470cac40c92348cbf",
+  "mean_trace": "For family F with columns C_F, mean_trace(t) = sum_{k in C_F} H_kk(t). Subject score T = mean of mean_trace over confirm window. Increment scores are the unique family block in that arm: pitch in M1, evidence in M2, resid in M3.",
+  "channel_aggregation": "none (all 65 ICA-cleaned channels; B2B_SPATIAL_DENOISE=none)",
+  "confirm_win_s": [
+    0.0,
+    0.8
+  ],
+  "negctrl_win_s": [
+    -0.2,
+    0.0
+  ],
+  "epoch": {
+    "anchor": "offset",
+    "tmin_s": -0.2,
+    "tmax_s": 0.8
+  },
+  "do_not_redefine_window_from_peaks": true,
+  "folds": {
+    "n_outer_partitions": 20,
+    "n_inner_folds": 4,
+    "n_blocks_per_section": 8,
+    "guard_words": 5,
+    "seed": 42
+  },
+  "estimator": {
+    "passthrough": true,
+    "pca_k": 1,
+    "h_ridge_kappa": 0,
+    "ols_H": true,
+    "lambda": "normalized ridge G; alpha tuned on observed partitions and reused in nulls",
+    "alpha_grid": "10^{\u22128:0.5:8}"
+  },
+  "exclusions": {
+    "node1617": true,
+    "T5_held_out_of_M2_M3": true,
+    "min_valid_partitions": 16,
+    "kappa_invalid": 85.0
+  },
+  "null": {
+    "algorithm": "freedman_lane_residual_shift_of_added_family",
+    "preserves": [
+      "reduced nested design X_red unpermuted (nuisance structure fixed)",
+      "added-family columns jointly via OLS residuals (circshift resid, add back X_red B)",
+      "spatial covariance (EEG unpermuted; all channels together)",
+      "story boundaries (independent k per section)"
+    ],
+    "min_shift_syllables": 20,
+    "min_shift_also_exceeds_epoch_span": true,
+    "epoch_span_s": 1.0,
+    "n_draws": 5000,
+    "seed_offset": 100000,
+    "reuse_observed_alpha": true,
+    "test": "one_sided_positive",
+    "p": "(1 + #{T* >= T}) / (B + 1)",
+    "T": "mean across subjects of confirm-window unique mean_trace",
+    "T_star_b": "mean across subjects of shift-b unique mean_trace",
+    "holm_family": [
+      "M2_evidence",
+      "M3_resid"
+    ],
+    "m1_is_positive_control_not_in_holm": true,
+    "do_not_require_M2_before_M3": true,
+    "type1_file": "tone_ctx_v1/null_type1.json",
+    "type1_decision": "use_freedman_lane",
+    "rejected_anti_pattern": "circular-shift only the added family while leaving M0/M1 fixed"
+  },
+  "reliability": {
+    "primary_split": "interleaved_60s_odd_even_blocks_per_story",
+    "not": "first_vs_second_half",
+    "score": "confirm-window unique mean_trace recomputed independently in each half",
+    "across_subject_r": "Pearson(odd, even) over n=63",
+    "spearman_brown": "2r/(1+r)",
+    "sb_gate": 0.3,
+    "sensitivity": "repeated 60s phase offsets 0/15/30/45 s; report median and 95% interval if launched",
+    "also_report": [
+      "SB on raw observed increment",
+      "SB on increment minus subject/half-specific null floor when half-nulls exist"
+    ],
+    "pitch_evidence_r_is_not_reliability": true
+  },
+  "decision_rules": {
+    "M1_fails_proper_null": "pause; audit timing, leakage, null calibration",
+    "M2_or_M3_fail_holm": "stop inferential work for that increment",
+    "existence_pass_SB_lt_0.30": "group-level existence only; no TD/DD or behavior",
+    "existence_pass_SB_ge_0.30": "prespecified group model allowed later",
+    "M2_pass_but_no_postoffset_specificity": "tone-evidence around the nucleus, not a post-offset response",
+    "M3_pass": "category-residual increment; conditional-label sensitivity before stronger claims"
+  },
+  "observed_outdirs": {
+    "M0": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M0_nucleus_offset",
+    "M1": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M1_nucleus_offset",
+    "M2": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M2_nucleus_offset",
+    "M3": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M3_nucleus_offset"
+  },
+  "existence_outdirs": {
+    "M1": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M1_nucleus_offset_existence_nulls",
+    "M2": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M2_nucleus_offset_existence_nulls",
+    "M3": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M3_nucleus_offset_existence_nulls"
+  },
+  "splithalf_outdirs": {
+    "M1": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M1_nucleus_offset_splithalf",
+    "M2": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M2_nucleus_offset_splithalf",
+    "M3": "/orcd/pool/005/haolun52/encoding_results_b2b_tone_ctx_v1_M3_nucleus_offset_splithalf"
+  },
+  "n_primary": 63,
+  "dims": {
+    "ctx_controls": 39,
+    "ctx_pitch": 5,
+    "ctx_evidence": 3,
+    "ctx_resid": 3
+  },
+  "feature_sha256": {
+    "section_001": {
+      "X_word_ctx_controls.npy": "9910a25403ad37c8b39d029b3a28a52842e1e20e089dd9f9dd5d96e0d6696b3d",
+      "X_word_ctx_evidence.npy": "634f943dcf0c639b5674224a2b1c35b301ba8e354314716f63d26971a8a692ef",
+      "X_word_ctx_pitch.npy": "91006afa9cf90dea3ac10e5bfaaa895af98edf36363dfdf689c1d417cd3abc0f",
+      "X_word_ctx_resid.npy": "f3a444a5b1fb3186a56870343c3eaf324086c693572a4e39b6c81ff01f4ee3eb",
+      "word_timing_relative.csv": "a88cc001a01267619f396552461131cb91bd7b05a1fec5cbb031fc43ceb90fc3"
+    },
+    "section_002": {
+      "X_word_ctx_controls.npy": "f5d3cd1e04d372694678ea39861d7640fbb16b2c7ecf6348a4fae9fc667f3acd",
+      "X_word_ctx_evidence.npy": "f13bfae6b54e2f5f2dc1822f97b976c47255f60ede543f755ad96e22183bb716",
+      "X_word_ctx_pitch.npy": "c7a824d851941473f561f129cb98886e8e9d4a481e62a2a7d06f4289770af906",
+      "X_word_ctx_resid.npy": "b030b8aa5b8609519635234b32c187bf74d28abefe5e731f2bd4d2d30487124a",
+      "word_timing_relative.csv": "a1dbac415d1cf15507691490592b4efa7aed30f6d563a9065af141e060fa0549"
+    }
+  },
+  "code_sha256": {
+    "config.jl": "9ef6086bdc5f65c3e43564d72d6e24824261b314e95c2bced090a077535d8466",
+    "estimator.jl": "67143be9df592698e635740265913f59b1dd91bfbfffcde948be26bc9302f084",
+    "existence_nulls.jl": "5248d435cd4680fe975be77d5416fa5ee97878fffdaa54084c351052572ad062",
+    "split_half.jl": "1dfcb8ad5e9dba8dc82dc7aacd124612fa3ff5824e1fd8a1143641f7a4666864",
+    "pipeline.jl": "eace418f5185edebb7ab957471a277589f727d907a56d9f8c23b5d2088db2c54",
+    "feature_basis.jl": "f9898c59b843b3c7af04c131798390597daa59f7e14d2888bcb81678f965d2ec",
+    "b2b_joint_v4_pipeline.jl": "d874a28ec77bd6451886e6fd81086740f09ed8562bd087b2d673405064f6806f",
+    "scripts/tone_ctx_v1_env.sh": "4f8dd7beb3e4ed327fb763a395b3d7c1cfaa9288128e19019e322e99d8cef051",
+    "scripts/submit_tone_ctx_v1.sh": "5df6c2d3750ff389ca5b6b261fd351da3c2527d5532d0ffa8fd1ac2827c696a2",
+    "scripts/extract_tone_ctx_v1_nucleuslocked.py": "5e37632ce9534e8d3e5ad963b1614230d72b9e8feb978fb2f52875e6158ecfaa",
+    "scripts/tone_ctx_lib.py": "29ab62e7138b0099072f5a58da8670239010c034f590ce4795d65562f2ca81f6"
+  },
+  "stimulus_sha256": {
+    "tone_ctx_tokens.parquet": "185a1ab820e9589df2c8331ea921f752632f276e473ae6b973b891ffa9a039ee",
+    "tone_ctx_tokens_scored.parquet": "32c9dcc3beede0fe247df99911e07e0943859b0ca80572e9c342b78d405ef34d",
+    "stimulus_report.md": "471a0baf6e51ee0d98594ee731625ad20bdf5ac3888694547edfbb6f5c1cebfb",
+    "recoverability.json": "d9c7fe0b1ccff5e77df697aa20978b7a3676a1277b3c258c6bf7e88123f9176d",
+    "overlap_ruler.json": "308b42de9dfd62e92e2b40d3bbf6e5813d159c80fb6c43ed2ddcfd93e1cec345",
+    "null_type1.json": "3791a3177580a346c426c14a3ca0da16ad4250d34673e531a3cfd00ce6168450",
+    "sec_lengths.json": "a271a7f1c970e0be4c7c080c7985ea78d6bfb8f8146701006a479b8af494b47b"
+  },
+  "overlap_ruler": {
+    "nucleus_onset_rel_offset_s": {
+      "p10": -0.14000000000000057,
+      "p50": -0.07000800000002982,
+      "p90": -0.03997799999990548
+    },
+    "next_nucleus_onset_rel_offset_s": {
+      "p10": 0.04998799999998482,
+      "p50": 0.080016999999998,
+      "p90": 0.47000009999997305
+    },
+    "prop_inside_at_minus_0.09": 0.3585247883917775
+  },
+  "interpretation_corrections": {
+    "M2_negative_lag": "temporally nonspecific around nucleus offset; not demonstrated carryover",
+    "M3_plus_0.58": "late overlap-sensitive decodability peak; not an implausible evoked latency"
+  },
+  "hold": [
+    "TD_DD",
+    "brain_behavior"
+  ]
+}
