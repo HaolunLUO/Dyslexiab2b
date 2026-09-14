@@ -1,0 +1,42 @@
+# Environments
+.venv*/
+**/.venv*/
+**/__pycache__/
+*.py[cod]
+.julia/
+*.jl.cov
+
+# OS / editor junk
+._*
+.DS_Store
+*~
+.vscode/
+.idea/
+
+# Cluster logs and job crumbs
+*.out
+*.err
+**/*_job_id.txt
+**/logs/*.out
+**/logs/*.err
+
+# Large arrays and plots (not source)
+*.npy
+*.npz
+*.parquet
+*.png
+*.jpg
+*.pdf
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.xlsx
+
+# Derived B2B result trees under joint_v4
+b2b_decoding/joint_v4/group_comparison_*/
+b2b_decoding/joint_v4/validation_*/
+b2b_decoding/joint_v4/existence/
+b2b_decoding/joint_v4/phase3a/
+b2b_decoding/joint_v4/reliability/
+b2b_decoding/joint_v4/.venv_gpt2/
