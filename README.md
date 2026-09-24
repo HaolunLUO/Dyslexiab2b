@@ -14,7 +14,12 @@ arrays, and encoding result trees.
 b2b_decoding/
   Project.toml          # Julia project deps
   joint_v4/             # pipeline, scripts, tests, freeze specs
+  n400_storytime/       # storytime N400 single-trial scripts, spec, summary tables
 ```
 
 See `b2b_decoding/joint_v4/README.md` and `EXECUTION.md` for locked configs
 and how to run observed / existence / split-half jobs.
+
+Storytime N400 (surprisal, frequency, association) is in
+`b2b_decoding/n400_storytime/`: spec, results, scripts, and the small
+coefficient / LRT / group-test tables. Trial dumps and embeddings stay on ORCD.
