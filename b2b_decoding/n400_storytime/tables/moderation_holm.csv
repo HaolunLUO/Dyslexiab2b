@@ -1,0 +1,5 @@
+"test","family_role","p_raw","p_holm","p_holm_primary_surprisal_only"
+"surprisal_x_td_vs_dyslexia","primary",0.00457699646065792,0.0183079858426317,0.00915399292131584
+"surprisal_x_ncap_vs_acap","primary",0.0341031321870267,0.10230939656108,0.0341031321870267
+"frequency_x_td_vs_dyslexia","secondary",0.0718331243169525,0.10230939656108,NA
+"frequency_x_ncap_vs_acap","secondary",0.0407551222017189,0.10230939656108,NA
