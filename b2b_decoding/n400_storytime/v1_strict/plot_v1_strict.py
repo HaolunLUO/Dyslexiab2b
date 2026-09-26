@@ -7,6 +7,7 @@ Reads fig.npz written by extract_channels.py. Does not refit models.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import matplotlib
@@ -18,9 +19,12 @@ import numpy as np
 
 POOL = Path("/orcd/pool/005/haolun52")
 TRIALS = POOL / "n400_storytime_v1" / "v1_strict" / "trials"
+# Compute nodes cannot write /run/user. Default is the pool; copy into the store after.
 MEDIA = Path(
-    "/run/user/245046/cursor_agent_stores/"
-    "bc-e43b7bb7-443a-4118-b8d5-2145d2516ab7/files/media/n400-v1-strict"
+    os.environ.get(
+        "N400_V1_MEDIA",
+        "/orcd/pool/005/haolun52/n400_storytime_v1/v1_strict/figures",
+    )
 )
 CHANNELS = [
     "Fpz", "Fp1", "Fp2", "AF3", "AF4", "AF7", "AF8",
